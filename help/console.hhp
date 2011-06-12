@@ -1,0 +1,39 @@
+[OPTIONS]
+Compatibility=1.1 or later
+Compiled file=console.chm
+Contents file=console.hhc
+Default Window=Main
+Default topic=html\introduction.html
+Display compile progress=No
+Full-text search=Yes
+Index file=console.hhk
+Language=0x409 English (United States)
+Title=Console Help
+
+[WINDOWS]
+Main=,"console.hhc","console.hhk","html\introduction.html",,,,,,0x42520,,0x301e,[271,372,1071,972],,,,,,,0
+
+
+[FILES]
+html\introduction.html
+html\copyright.html
+html\gpl.html
+html\acknowledgements.html
+html\running.html
+html\menus.html
+html\settings_console.html
+html\settings_appearance.html
+html\settings_appearance_more.html
+html\settings_behavior.html
+html\settings_hotkeys.html
+html\settings_mouse.html
+html\settings_tabs.html
+html\language.html
+html\tips_tricks.html
+html\bugs_limitations.html
+html\reporting_problems.html
+html\changelog.html
+html\credentials.html
+
+[INFOTYPES]
+

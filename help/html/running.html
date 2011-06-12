@@ -1,0 +1,100 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+
+<head>
+	<title>Running Console</title>
+	<meta http-equiv="content-type" content='text/html; charset=utf-8' />
+	<link rel="stylesheet" type="text/css" href="../styles/help.css" />
+</head>
+
+<body>
+	<h1>Running Console</h1>
+	
+	<p>
+		Console setup creates shortcuts in the Start menu (Console group), on 
+		the desktop and in the quick launch bar. Any of these shortcuts will
+		run Console with its default configuration, read from console.xml file
+		located in Console program directory.
+	</p>
+	
+	<h2>Command line parameters</h2>
+	
+	<p>
+		Console supports these command line parameters:
+	</p>
+
+	<p class="block-row-name">-c &lt;configuration file&gt;</p>
+	<p class="block-row-description">
+		Specifies a configuration file.
+	</p>
+	<br/>
+
+	<p class="block-row-name">-w &lt;main window title&gt;</p>
+	<p class="block-row-description">
+		Sets main window title. This option will override all other main 
+		window title settings (e.g. 'use tab titles' setting)
+	</p>
+	<br/>
+
+	<p class="block-row-name">-t &lt;tab name&gt;</p>
+	<p class="block-row-description">
+		Specifies a startup tab. <b>Tab must be defined in Console settings.</b>
+	</p>
+	<br/>
+
+	<p class="block-row-name">-d &lt;directory&gt;</p>
+	<p class="block-row-description">
+		Specifies a startup directory. If you want to parametrize startup dirs,
+		you need to specify startup directory parameter as "%1"\ (backslash is 
+		<b>outside</b> of the double quotes)
+	</p>
+	<br/>
+
+	<p class="block-row-name">-r &lt;command&gt;</p>
+	<p class="block-row-description">
+		Specifies a startup shell command.
+	</p>
+	<br/>
+
+	<p class="block-row-name">-ts &lt;sleep time in ms&gt;</p>
+	<p class="block-row-description">
+		Specifies sleep time between starting next tab if multiple -t's 
+		are specified.
+	</p>
+	<br/>
+
+	<p>
+		<b>Note:</b> -t option is not used to set tab's title. It specifies one
+		of the names of the tabs defined in Console settings.
+	</p>
+	<p>
+		<b>Note:</b> If you specify multiple -t options, you can specify 
+		multiple -d and -r options as well. In that case, each -t, -d and -r 
+		option will be grouped together. If there is no corresponding -d 
+		option for a -t option, the initial directory from that tab's settings 
+		will be used.
+		For example:
+		<br /><br />
+		Console.exe -t bash -d C:\WINDOWS -r &quot;ls -al&quot; -t cmd -d D:\ -t ncftp
+		<br /><br />
+		Will start 'bash' tab in C:\WINDOWS, running &quot;ls -al&quot; 
+		command in it and 'cmd' tab in D:\. 'ncftp' tab will be started in the 
+		initial directory specified in its settings.
+	</p>
+	<p>
+		<b>Note:</b> Some shells need an additional switch in the startup 
+		command string. E.g. when using cmd.exe, you must put /k at the 
+		beginning of your command string:
+		<br /><br />
+		Console.exe -t cmd -r &quot;/k dir /b&quot;
+	</p>
+	<p>
+		<b>Note:</b> -ts option can be useful if you want to start multiple 
+		instances of a tab, and tab's shell needs write access to some files 
+		during initialization Using -ts option, you can specify time to sleep 
+		between starting the next tab, giving each shell enough time to 
+		initialize itself.
+	</p>
+</body>
+
+</html>
