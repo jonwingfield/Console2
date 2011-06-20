@@ -1136,8 +1136,10 @@ HotKeys::HotKeys()
 	commands.push_back(shared_ptr<CommandData>(new CommandData(L"scrollpageleft",	ID_SCROLL_PAGE_LEFT,	L"Scroll buffer page left")));
 	commands.push_back(shared_ptr<CommandData>(new CommandData(L"scrollpageright",	ID_SCROLL_PAGE_RIGHT,	L"Scroll buffer page right")));
 
-	commands.push_back(shared_ptr<CommandData>(new CommandData(L"dumpbuffer",	IDC_DUMP_BUFFER,	L"Dump screen buffer")));
-	commands.push_back(shared_ptr<CommandData>(new CommandData(L"togglealpha",	ID_TOGGLE_ALPHA,	L"Toggle Alpha")));
+	commands.push_back(shared_ptr<CommandData>(new CommandData(L"dumpbuffer",		IDC_DUMP_BUFFER,	L"Dump screen buffer")));
+	commands.push_back(shared_ptr<CommandData>(new CommandData(L"togglealpha",		ID_TOGGLE_ALPHA,	L"Toggle Alpha")));
+	commands.push_back(shared_ptr<CommandData>(new CommandData(L"increasealpha",	ID_INCREASE_ALPHA,	L"Increase Alpha")));
+	commands.push_back(shared_ptr<CommandData>(new CommandData(L"decreasealpha",	ID_DECREASE_ALPHA,	L"Decrease Alpha")));
 
 	// global commands
 	commands.push_back(shared_ptr<CommandData>(new CommandData(L"activate",	IDC_GLOBAL_ACTIVATE,	L"Activate Console (global)", true)));

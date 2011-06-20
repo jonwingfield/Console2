@@ -1506,6 +1506,40 @@ LRESULT MainFrame::OnToggleAlpha(WORD /*wNotifyCode*/, WORD /*wID*/, HWND /*hWnd
 //////////////////////////////////////////////////////////////////////////////
 
 
+
+//////////////////////////////////////////////////////////////////////////////
+
+LRESULT MainFrame::OnIncreaseAlpha(WORD /*wNotifyCode*/, WORD /*wID*/, HWND /*hWndCtl*/, BOOL& /*bHandled*/)
+{
+	if (!m_activeView) return 0;
+	
+	if (g_settingsHandler->GetAppearanceSettings().transparencySettings.byActiveAlpha < 245)
+		g_settingsHandler->GetAppearanceSettings().transparencySettings.byActiveAlpha += 10;
+
+	SetTransparency();
+
+	return 0;
+}
+
+//////////////////////////////////////////////////////////////////////////////
+
+
+//////////////////////////////////////////////////////////////////////////////
+
+LRESULT MainFrame::OnDecreaseAlpha(WORD /*wNotifyCode*/, WORD /*wID*/, HWND /*hWndCtl*/, BOOL& /*bHandled*/)
+{
+	if (!m_activeView) return 0;
+	
+	if (g_settingsHandler->GetAppearanceSettings().transparencySettings.byActiveAlpha > 10)
+		g_settingsHandler->GetAppearanceSettings().transparencySettings.byActiveAlpha -= 10;
+
+	SetTransparency();
+
+	return 0;
+}
+
+//////////////////////////////////////////////////////////////////////////////
+
 //////////////////////////////////////////////////////////////////////////////
 
 LRESULT MainFrame::OnHelp(WORD /*wNotifyCode*/, WORD /*wID*/, HWND /*hWndCtl*/, BOOL& /*bHandled*/)
