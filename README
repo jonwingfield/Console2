@@ -1,9 +1,9 @@
-Just a fork of the original Console2 project over on SourceForge (http://sourceforge.net/projects/console/) with a few added features that I wanted:
+Just a new fork of the original Console2 project over on SourceForge (http://sourceforge.net/projects/console/) with a few added features that I wanted:
 
 
 
 * Ability to toggle transparency on-off using a hotkey.
 
-##Dependencies:
+###Dependencies:
 
 * Boost CPP libraries: http://www.boost.org/
